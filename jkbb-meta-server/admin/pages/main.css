@@ -1,0 +1,10 @@
+.log_reg.main{   
+    background-color: #fff;
+    left: 50%;
+    margin: -高/2 0 0 -宽/2;
+    position: fixed;
+    top: 50%;
+    width: 300px;
+    height: 300px;
+    z-index: 25;
+}

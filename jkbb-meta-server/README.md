@@ -1,11 +1,3 @@
-# auto-pdsu-jkbb
-
-i平院自动健康报备，keystone+typescript+python3
-
-# 使用教程请联系开发者获取！
-
-# 以下是环境配置指南
-
 # Keystone Project Starter
 
 Welcome to Keystone!
