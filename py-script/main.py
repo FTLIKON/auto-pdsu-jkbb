@@ -7,6 +7,7 @@ import time
 import datetime
 import pyppeteer
 import os
+from git import Repo
 import sys
 from pyppeteer import launch
 import logging
@@ -47,10 +48,14 @@ def get_userlist():
 
 
 def push_log_git():
+    dirfile = os.path.abspath('/home/auto-pdsu-jkbb/')
+    repo = Repo(dirfile)
     # 上传log到git仓库
-    os.system('sudo git add .')
-    os.system('sudo git commit -m "update: jkbb logs"')
-    os.system('sudo git push')
+    g = repo.git
+    g.add("--all")
+    g.commit("-m update: auto push log")
+    g.push()
+    print("Successful push!")
 
 def push_resp(user):
     '''
