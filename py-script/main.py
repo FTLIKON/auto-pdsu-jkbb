@@ -6,6 +6,7 @@ import random
 import time
 import datetime
 import pyppeteer
+import os
 import sys
 from pyppeteer import launch
 import logging
@@ -233,6 +234,10 @@ async def get_token(account, password):
             # 成功即返回token
             logging.info(account+" "+password+" 获取token成功")
             print(account+" "+password+" 获取token成功")
+            # 上传log到git仓库
+            os.system('sudo git add .')
+            os.system('sudo git commit -m "update: jkbb logs"')
+            os.system('sudo git push')
             return user_cookie
 
 if __name__ == '__main__':
