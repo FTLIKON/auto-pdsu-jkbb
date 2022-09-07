@@ -46,6 +46,12 @@ def get_userlist():
     return user_list
 
 
+def push_log_git():
+    # 上传log到git仓库
+    os.system('sudo git add .')
+    os.system('sudo git commit -m "update: jkbb logs"')
+    os.system('sudo git push')
+
 def push_resp(user):
     '''
 
@@ -230,14 +236,12 @@ async def get_token(account, password):
             logging.info(account+" "+password+" 获取token失败")
             await browser.close()
             try_num += 1
+            push_log_git()
         else:
             # 成功即返回token
             logging.info(account+" "+password+" 获取token成功")
             print(account+" "+password+" 获取token成功")
-            # 上传log到git仓库
-            os.system('sudo git add .')
-            os.system('sudo git commit -m "update: jkbb logs"')
-            os.system('sudo git push')
+            push_log_git()
             return user_cookie
 
 if __name__ == '__main__':
