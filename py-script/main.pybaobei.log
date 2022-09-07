@@ -8458,3 +8458,86 @@ asyncio.base_futures.InvalidStateError: invalid state
 2022-09-07 08:00:39,598 {"success":false,"message":"今日00:00:01-23:59:59已上报完成","code":400,"result":null,"timestamp":1662508839572}
 2022-09-07 08:00:39,598 ------------------------------
 2022-09-07 19:36:39,743 13961033374 abc999984 获取token成功
+2022-09-07 19:38:11,612 {"success":false,"message":"今日00:00:01-23:59:59已上报完成","code":400,"result":null,"timestamp":1662550691585}
+2022-09-07 19:38:11,612 ------------------------------
+2022-09-07 19:38:25,973 Task exception was never retrieved
+future: <Task finished coro=<Connection._async_send() done, defined at /home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state',)>
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 750, in transfer_data
+    message = await self.read_message()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 819, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 895, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 975, in read_frame
+    extensions=self.extensions,
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/framing.py", line 55, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 483, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 1007, in write_frame
+    await self.ensure_open()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 726, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 153, in _on_close
+    f'Protocol error {cb.method}: Target closed.',  # type: ignore
+asyncio.base_futures.InvalidStateError: invalid state
+2022-09-07 19:38:26,014 Task exception was never retrieved
+future: <Task finished coro=<Connection._async_send() done, defined at /home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py:69> exception=InvalidStateError('invalid state',)>
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 750, in transfer_data
+    message = await self.read_message()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 819, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 895, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 975, in read_frame
+    extensions=self.extensions,
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/framing.py", line 55, in read
+    data = await reader(2)
+  File "/usr/lib/python3.6/asyncio/streams.py", line 672, in readexactly
+    raise IncompleteReadError(incomplete, n)
+asyncio.streams.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 73, in _async_send
+    await self.connection.send(msg)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 483, in send
+    await self.write_frame(True, opcode, data)
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 1007, in write_frame
+    await self.ensure_open()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/websockets/legacy/protocol.py", line 726, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: code = 1006 (connection closed abnormally [internal]), no reason
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 79, in _async_send
+    await self.dispose()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 170, in dispose
+    await self._on_close()
+  File "/home/ubuntu/.local/lib/python3.6/site-packages/pyppeteer/connection.py", line 153, in _on_close
+    f'Protocol error {cb.method}: Target closed.',  # type: ignore
+asyncio.base_futures.InvalidStateError: invalid state
+2022-09-07 19:48:37,492 13961033374 abc999984 获取token成功
