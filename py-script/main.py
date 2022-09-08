@@ -21,7 +21,7 @@ def get_userlist():
 
     user_list = []
 
-    conn = sqlite3.connect('/home/auto-pdsu-jkbb/jkbb-meta-server/keystone.db')
+    conn = sqlite3.connect('/home/gitbase/auto-pdsu-jkbb/jkbb-meta-server/keystone.db')
     c = conn.cursor()
     cursor = c.execute("SELECT * FROM jkbb")
     for row in cursor:
@@ -48,7 +48,7 @@ def get_userlist():
 
 
 def push_log_git():
-    dirfile = os.path.abspath('/home/auto-pdsu-jkbb/')
+    dirfile = os.path.abspath('/home/gitbase/auto-pdsu-jkbb/')
     repo = Repo(dirfile)
     # 上传log到git仓库
     g = repo.git
